@@ -1,0 +1,1 @@
+alert("Hello world"); // alert brings up a message box that displays a string.
