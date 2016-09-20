@@ -1,0 +1,17 @@
+body {
+    color:white;
+}
+div {
+    background: no-repeat;
+    background-size: cover;
+}
+p {
+    word-spacing: 75px;
+}
+h4 {
+    word-spacing: 50px;
+}
+.glyphicon-plus {
+    font-size: 20px;
+    padding: 10px;
+}
