@@ -24,11 +24,16 @@ function handleGuess(){
     var guess = $("#txtBoxGuess").val(); // gets val from form 
     if(+guess == answer) {
         $("#message").text("You're right");
+        $("body").css("background-image","url(http://20px.com/wp-content/uploads/2013/02/unicorn_pooping_a_rainbow_20px.jpg)");
+        $("#btnGuess").hide(); // hides the guess button when you get it right 
+        $("#resetBtn").show();
     }
     else {
         $("#message").text("Nope");
          //sets text to value
         $("#txtBoxGuess").val("");
+        $("body").css("background-image","url(http://www.cluburban.com/media/catalog/product/p/o/poop-emoji-phone-charger_1.jpg)");
+        $("#resetBtn").show();
 }
     $("#txtBoxGuess").focus();
 }
@@ -38,9 +43,9 @@ function playGame(){
     //set divs 
     $("#intro").hide();
     $("#game").show();
-    $("#resetBtn").show();
     //set focus
     $("#txtBoxGuess").focus();
+    $("#resetBtn").hide();
 }
 
 
@@ -51,7 +56,7 @@ $(function(){
     $("#btnGuess").on("click",handleGuess);
     //start the game
     setupGame();
-    $("#reset").on("click",function(){
+    $("#resetBtn").on("click",function(){ // starts the game over 
         location.reload();
     });
      $("body").css("background-color", "grey");
