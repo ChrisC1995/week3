@@ -1,0 +1,46 @@
+<!-- button to start the game, your guess field, button to say right or wrong, button to guess. -->
+
+
+<html>
+
+<head>
+    <title>Guessing Game</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="guessingGame.js"></script>
+</head>
+
+<body>
+    <br/>
+    <br/>
+    <!-- need a div for a start game -->
+    <h1> Guessing Game! </h1>
+    <div id="intro">
+        <p> Click the botton below to start the game </p>
+        <button id="startGame">Start Game!</button>
+    </div>
+    <br/>
+    <br/>
+
+    <!-- need a div while playing -->
+    <div id="game">
+        <fieldset>
+            <label> What is your guess:
+                <input type = "text" maxlength= "2" id="txtBoxGuess" placeholder= "from one to ten"/>
+                </label>
+            <br/>
+            <br/>
+            <button id="btnGuess"> Guess!</button>
+            <br/>
+            <br/>
+            <span id="message"></span>
+            <br/>
+        </fieldset>
+    </div>
+<br/>
+<br/>
+<div id = "resetBtn">
+    <button id = "reset"> Reset! </button>
+    </div>
+</body>
+
+</html>
