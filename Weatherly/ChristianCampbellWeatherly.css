@@ -1,5 +1,7 @@
 body {
     color:white;
+    background-image: url("http://static.tumblr.com/ed563f95b4cb3aa33db019607dedfaaf/pisnvs0/1tDn7jlhh/tumblr_static_75n67wf6mmo84os8c0o4c84sk.jpg");
+    background-size: cover;
 }
 div {
     background: no-repeat;
