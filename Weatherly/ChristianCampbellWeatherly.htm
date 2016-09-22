@@ -36,13 +36,18 @@
 
     </ul>
     <div class="btn-group pull-right">
-  <button type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-plus pull-right btn btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Add New Location</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="https://www.Google.com">About Us</a></li>
-  </ul>
+       <div id ="dropDown" class="dropdown pull-right">
+           <button style="height: 50px; width: 50px" class="glyphicon glyphicon-plus dropdown-toggle pull-right" type="button" data-toggle="dropdown"></button>
+           <ul style="width: 300px" class="dropdown-menu">
+               <li>
+                       Zip Code: <input id = "zipcode" type="textarea" name="zipcode" required>
+                       </input>
+                       <input id = "button" type="submit">
+                       </input>
+                   </form>
+               </li>
+       </div>
+       </ul>
 </div>
     
   </div>
@@ -50,7 +55,7 @@
 </div>
     <div class = "container">
         <div class = "row" style="width:100%">
-            <div class= "col-md-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 350px; border-radius: 20px">
+            <div id= "div1" class= "col-md-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 350px; border-radius: 20px">
             <span class ="glyphicon glyphicon-plus pull-right"></span>
             <h2>Salyersville, Kentucky</h2> 
             <br/>
@@ -119,7 +124,54 @@
             <p>80&#8457; 80% 65&#8457;</p>
             </div>
      </div>
-    </div>        
+    </div>
+<script>
+    function darksky_Complete (result){ //call back from dark sky
+    console.log(result) 
+}
+    $(function(){
+        var request = {
+
+            url:"https://api.darksky.net/forecast/9082fe967f08a193dc0897d7c2043a2e/37.8267,-122.4233", //just put url in there, waits till call is done, displays it
+            dataType: "jsonp",
+            success: darksky_Complete
+
+
+        }
+     $.ajax(request);
+    });
+ </script>
+ <script>  
+   function google_Complete (zip){ //call back from dark sky
+    dataType: "json",
+    console.log(zip); 
+}
+    $(function(){
+        var requests = {
+
+            url:"https://maps.googleapis.com/maps/api/geocode/json?address=41465&key=AIzaSyCwyTdHnIN_Sw0vKGhH_dhb4VjI4QR2G1A", //just put url in there, waits till call is done, displays it
+            success: google_Complete
+
+
+        }
+     $.ajax(requests);
+    });
+
+$(function() {
+var link = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+var key = "&key=AIzaSyCwyTdHnIN_Sw0vKGhH_dhb4VjI4QR2G1A";
+var darkskies = "https://api.darksky.net/forecast/017f3ac0086e46d4ee9d8ea494cd4670/";
+
+$("#button").on("click", function() {
+  var url = link + $("#zipcode").val() + key;
+  console.log(url);
+    
+  });
+  
+});
+
+
+</script>        
 </body>
 
 </html>
