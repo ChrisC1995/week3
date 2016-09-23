@@ -8,7 +8,7 @@ div {
     background-size: cover;
 }
 p {
-    word-spacing: 75px;
+    word-spacing: 70px;
 }
 h4 {
     word-spacing: 50px;
@@ -16,4 +16,7 @@ h4 {
 .glyphicon-plus {
     font-size: 20px;
     padding: 10px;
+}
+#dropDown {
+    color:black;
 }

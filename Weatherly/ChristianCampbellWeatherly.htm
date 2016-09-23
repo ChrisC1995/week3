@@ -17,15 +17,33 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="ChristianCampbellWeatherly.css"/>
+    <script src="Weatherly.js"></script>
+    <script src="https://use.fontawesome.com/790f9781fd.js"></script>
 
 </head>
 
 <body>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
 <div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Weatherly</a>
+      <a class="navbar-brand" href="#" style="font-family: cursive; font-size: 20pt">Weatherly</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -33,18 +51,15 @@
       <li><a href="http://www.noaa.gov/" target="_blank">National</a></li> 
       <li><a href="http://www.accuweather.com/en/world-weather" target="_blank">International</a></li>
        <li><a href="http://www.accuweather.com/en/world/satellite" target="_blank">Radar</a></li>
-
+        <li class="fb-share-button" data-href="http://ChrisC1995.github.io" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FChrisC1995.github.io%2F&amp;src=sdkpreparse" style ="background-color: #3b5998">Share on Facebook!</a>
     </ul>
     <div class="btn-group pull-right">
        <div id ="dropDown" class="dropdown pull-right">
            <button style="height: 50px; width: 50px" class="glyphicon glyphicon-plus dropdown-toggle pull-right" type="button" data-toggle="dropdown"></button>
            <ul style="width: 300px" class="dropdown-menu">
                <li>
-                       Zip Code: <input id = "zipcode" type="textarea" name="zipcode" required>
-                       </input>
-                       <input id = "button" type="submit">
-                       </input>
-                   </form>
+                        <label>Enter a postal code: <input type="text" id="postalCode" placeholder="postal code" /></label>
+                <button type="button" id="buttonLookUpZip">Lookup</button>
                </li>
        </div>
        </ul>
@@ -54,124 +69,29 @@
 </nav>
 </div>
     <div class = "container">
-        <div class = "row" style="width:100%">
-            <div id= "div1" class= "col-md-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 350px; border-radius: 20px">
-            <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Salyersville, Kentucky</h2> 
+        <div class = "row" id="cards">
+            </div>
+
+
+
+            <div id = "tempDiv">
+            <div class= "col-xs-10 col-sm-10 col-md-3 col-lg-3 col-xl-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 350px; border-radius: 20px;">
+
+
+            <h2>@@NAME@@</h2>
+            <span>@@NAME2@@</span> 
             <br/>
-            <h1>85 &#8457;</h1>
+            <h1>@@TEMP@@</h1>
             <br/>
-            <h3>Sunny</h3>
+            <h3>@@SUMMARY@@</h3>
             <hr/>
             <h4> High Chance Low</h4>
-            <p>87&#8457; 0% 75&#8457;</p>
+            <p>@@MAX@@, @@PERCENT@@, @@MIN@@</p>
             </div>
-            <div class= "col-md-3" style = "background-image: url(http://i0.wp.com/www.sanangelonow.com/wp-content/uploads/2016/03/raindrops-828954_640.jpg?resize=640%2C360); margin: 40px; height: 350px; border-radius: 20px">
-             <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Paintsville, Kentucky</h2>
-            <br/>
-             <h1>74 &#8457;</h1>
-            <br/>
-            <h3>Rain</h3>
-            <hr/>
-            <h4> High Chance Low</h4>
-            <p>79&#8457; 100% 64&#8457;</p>
             </div>
-            <div class= "col-md-3" style = "background-image: url(http://hotready.com/wpdemo/wp-content/uploads/2015/04/slider-thunderstorm.jpg); margin: 40px; height: 350px; border-radius: 20px">
-             <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Prestonsburg, Kentucky</h2>
-            <br/>
-            <h1>80 &#8457;</h1>
-            <br/>
-            <h3>Thunderstorms</h3>
-            <hr/>
-            <h4> High Chance Low</h4>
-            <p>85&#8457; 60% 72&#8457;</p>
             </div>
-<div class = "container">
-        <div class = "row" style= "width: 100%">
-            <div class= "col-md-3" style = "background-image: url(http://www.rasiel.com/lutefisk/800/Overcast.jpg); margin: 40px; height: 350px; border-radius: 20px">
-             <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Salyersville, Kentucky</h2>
-            <br/>
-            <h1>82 &#8457;</h1>
-            <br/>
-            <h3>Overcast</h3>
-            <hr/>
-            <h4> High Chance Low</h4>
-            <p>89&#8457; 20% 75&#8457;</p>
-            </div>
-            <div class= "col-md-3" style = "background-image: url(http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/474095061.jpg); margin: 40px; height: 350px; border-radius: 20px">
-             <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Paintsville, Kentucky </h2>
-            <br/>
-            <h1>85 &#8457;</h1>
-            <br/>
-            <h3>Partly Cloudy</h3>
-            <hr/>
-            <h4> High Chance Low</h4>
-            <p>92&#8457; 45% 79&#8457;</p>
-            </div>
-            <div class= "col-md-3" style = "background-image: url(http://lhoti.ipbhost.com/uploads/gallery/album_2/gallery_1_2_54960.jpg); margin: 40px; height: 350px; border-radius: 20px">
-             <span class ="glyphicon glyphicon-plus pull-right"></span>
-            <h2>Prestonsburg, Kentucky</h2>
-            <br/>
-            <h1>80 &#8457;</h1>
-            <br/>
-            <h3>Severe Storms</h3>
-            <hr/>
-            <h4> High Chance Low</h4>
-            <p>80&#8457; 80% 65&#8457;</p>
-            </div>
-     </div>
-    </div>
-<script>
-    function darksky_Complete (result){ //call back from dark sky
-    console.log(result) 
-}
-    $(function(){
-        var request = {
-
-            url:"https://api.darksky.net/forecast/9082fe967f08a193dc0897d7c2043a2e/37.8267,-122.4233", //just put url in there, waits till call is done, displays it
-            dataType: "jsonp",
-            success: darksky_Complete
 
 
-        }
-     $.ajax(request);
-    });
- </script>
- <script>  
-   function google_Complete (zip){ //call back from dark sky
-    dataType: "json",
-    console.log(zip); 
-}
-    $(function(){
-        var requests = {
-
-            url:"https://maps.googleapis.com/maps/api/geocode/json?address=41465&key=AIzaSyCwyTdHnIN_Sw0vKGhH_dhb4VjI4QR2G1A", //just put url in there, waits till call is done, displays it
-            success: google_Complete
-
-
-        }
-     $.ajax(requests);
-    });
-
-$(function() {
-var link = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-var key = "&key=AIzaSyCwyTdHnIN_Sw0vKGhH_dhb4VjI4QR2G1A";
-var darkskies = "https://api.darksky.net/forecast/017f3ac0086e46d4ee9d8ea494cd4670/";
-
-$("#button").on("click", function() {
-  var url = link + $("#zipcode").val() + key;
-  console.log(url);
-    
-  });
-  
-});
-
-
-</script>        
 </body>
 
 </html>
