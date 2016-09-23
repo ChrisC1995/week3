@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="ChristianCampbellWeatherly.css"/>
     <script src="Weatherly.js"></script>
     <script src="https://use.fontawesome.com/790f9781fd.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet"/>
 
 </head>
 
@@ -43,7 +44,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="font-family: cursive; font-size: 20pt">Weatherly</a>
+      <a class="navbar-brand" href="#" style="font-size: 25pt; color: white;"><i>Weatherly</i></a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -52,6 +53,7 @@
       <li><a href="http://www.accuweather.com/en/world-weather" target="_blank">International</a></li>
        <li><a href="http://www.accuweather.com/en/world/satellite" target="_blank">Radar</a></li>
         <li class="fb-share-button" data-href="http://ChrisC1995.github.io" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FChrisC1995.github.io%2F&amp;src=sdkpreparse" style ="background-color: #3b5998">Share on Facebook!</a>
+        <li class="glyphicon glyphicon-cloud"/>
     </ul>
     <div class="btn-group pull-right">
        <div id ="dropDown" class="dropdown pull-right">
@@ -75,8 +77,7 @@
 
 
             <div id = "tempDiv">
-            <div class= "col-xs-10 col-sm-10 col-md-3 col-lg-3 col-xl-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 350px; border-radius: 20px;">
-
+            <div id ="remove" class= "col-xs-10 col-sm-10 col-md-3 col-lg-3 col-xl-3" style = "background-image: url(https://d13yacurqjgara.cloudfront.net/users/143364/screenshots/1071176/sun_ncloud-icons_1x.png);  margin: 40px; height: 370px; border-radius: 20px;">
 
             <h2>@@NAME@@</h2>
             <span>@@NAME2@@</span> 
@@ -85,8 +86,9 @@
             <br/>
             <h3>@@SUMMARY@@</h3>
             <hr/>
-            <h4> High Chance Low</h4>
-            <p>@@MAX@@, @@PERCENT@@, @@MIN@@</p>
+            <h4> Max Chance Low</h4>
+            <p>@@MAX@@  @@PERCENT@@  @@MIN@@</p>
+            <button id="removeB" class ="pull-right glyphicon glyphicon-remove btn btn-info"/>
             </div>
             </div>
             </div>

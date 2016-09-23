@@ -91,13 +91,14 @@ function lookUpWeather_complete(request){
 
 
 
-
 // document ready 
 
 $(function () {
     $("#buttonLookUpZip").on("click", lookupWeatherForZip);
     $("#tempDiv").hide();
-
+    $(document).on("click", "#removeB", function(){
+        $(this).parent("#remove").fadeOut();
+    });
 });
 
 
